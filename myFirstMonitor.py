@@ -18,6 +18,7 @@ def read_memory():
     return mem_dict
 
 def read_disk():
+    swap_info = psutil.swap_memory()
     dict_disk = {"total_swap":swap_info.total / (1024 ** 3),"used_swap":swap_info.used / (1024 ** 3),"free_swap":swap_info.free / (1024 ** 3),"swap_percentage_used":swap_info.percent}
     return dict_disk
 
