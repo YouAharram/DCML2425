@@ -1,4 +1,5 @@
 import pandas
+import numpy as np
 from pandas import read_csv
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
@@ -12,6 +13,7 @@ if __name__ == "__main__":
     my_data = my_dataset.drop(columns=['label'])
 
     #step 2: fare lo spit dei dati per l'addestramento e per il test
+    np.random.seed(42)
     x_train, x_test, y_train, y_test = train_test_split(my_data, my_labels,test_size = 0.5)
 
 
